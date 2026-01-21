@@ -84,10 +84,11 @@ bath_chart = alt.Chart(source).mark_bar(opacity=0.8).encode(
 ).transform_filter(brush).properties(width=380, height=200, title="6. Avg Price by Bathroom Count")
 
 # --- Combine into Dashboard Object ---
-st.title("🏡 King County Real Estate Dashboard (6-View)")
+st.title("King County Real Estate Dashboard ")
 st.info("💡 **Interactive Insight:** Use your mouse to draw a box on the Map or Scatter Plot. All 6 charts are linked.")
 
 # Altair horizontal and vertical concatenation
 dashboard = (map_chart | scatter) & (bars | hist) & (bed_chart | bath_chart)
 
 st.altair_chart(dashboard, use_container_width=True)
+
